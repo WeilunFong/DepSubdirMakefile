@@ -1,0 +1,101 @@
+<!--
+    @Author: Weilun Fong
+    @Coding: utf-8
+    @E-mail: wlf@zhishan-iot.tk
+-->
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>readme - dep-subdirs-compile</title>
+        <style>
+            code {
+                font-family: "Consolas";
+                font-weight: bold;
+            }
+
+            html {
+                font-family: "Consolas";
+            }
+
+            h2 {
+                font-weight: bold;
+                text-align: left;
+            }
+
+            kbd {
+                background-color: DimGray;
+                border-radius: 2px;
+                color: White;
+                font-family: "Consolas";
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <article>
+            <h1 style="text-align: center">README - DEP-SUBDIRS-COMPILE</h1>
+            <p style="text-align: center">
+                <i>Weilun Fong - ZHISHAN-IoT</i><br>
+                <i><time datetime="2019-06-20">2019-06-20</time></i><br>
+            </p>
+
+            <!-- 什么是 dep-subdirs-compile？ -->
+            <h2>什么是 dep-subdirs-compile？</h2>
+            <p>dep-subdirs-compile是一个用于演示在拥有多个编译对象子目录的项目代码中，针对存在依赖关系的子目录如何进行优先编译的微型项目，即当存在一个子目录因被其他子目录所依赖而需要优先编译。该现象在实际的工程项目开发中十分常见，dep-subdirs-compile为此提供了一个简单高效的解决方案。需要注意的是本项目代码仅适用于Linux或者类Unix环境下。</p>
+            <p>下列项目正在使用本开源项目的代码：
+                <li>
+                    <ol><small>(null)</small></ol>
+                </li>
+                如果该列表的信息是不完整的，欢迎及时告知我们！
+            </p>
+
+            <!-- 所需工具 -->
+            <h2>所需工具</h2>
+            <ul>
+                <li><a href="http://www.gnu.org/software/make/manual/make.html">gnu-make</a></li>
+                <li>C语言编译器 (需要在运行环境中配置相应的“CC”变量)</li>
+            </ul>
+
+            <!-- 目录结构 -->
+            <h2>目录结构</h2>
+            <p>
+                <ul>
+                    <li><b><sup>*</sup>build</b>&nbsp;: 存放项目编译入口makefile的目录。</li>
+                    <li><b><sup>*</sup>code</b>&nbsp;&nbsp;: 项目代码目录（含所有子目录）。其中，<i>dep</i>目录需要被优先编译。</li>
+                    <li><b>obj</b>&nbsp;&nbsp;&nbsp;&nbsp;: 编译过程中各类文件的输出目录。</li>
+                    <li><b>AUTHORS</b></li>
+                    <li><b>ChangLog</b></li>
+                    <li><b>LICENSE</b>: dep-subdirs-compile遵循 <a href="https://wtfpl2.com">WTFPL2</a> 协议。</li>
+                    <li><b>readme.html</b>/<b>readme-zh.html</b></li></li>
+                    <li><b>test.sh</b>: 一键测试脚本。</li>
+                    <li><b>VERSION</b>: 项目版本号。</li>
+                </ul>
+                <small><i>注意："*"标记意为重要目录。</i></small>
+            </p>
+
+            <!-- 如何运行？如何编译？ -->
+            <h2>如何运行？如何编译？</h2>
+            <p>
+                <i>dep</i>目录是一个需要被优先编译为动态库（libdep.so）的依赖项，在该动态库文件中仅有一个关于加法操作的函数。其余子目录则将生成一个各自的可执行文件（因为这些目录下有且仅有一个子目录）同时会尝试对依赖项创建动态链接。除此之外，每个可执行文件将以对应的.c文件名进行命名。
+            </p>
+            <p>
+                有如下两种方式可以构建
+                <ol>
+                    <li>执行 <i>build</i> 目录下的 <a href="build/makefile">makefile</a>。可通过命令<kbd&nbsp;>make help </kbd> 获取maekfile的帮助信息与参数支持情况。如果只编译其中某个子目录则需输入命令&nbsp;<kbd>&nbsp;make&nbsp;</kbd> + 目录名。需要注意的是该方式只完成项目构建工作，若想要观察运行结果需要手动完成相关的操作。</li>
+                    <li>运行一键测试脚本 <a href="test.sh">test.sh</a>。可通过脚本参数 <kbd>&nbsp;-h </kbd> 或 <kbd>&nbsp;--help </kbd> 获取相关的帮助信息。该脚本可完成包括编译构建与程序运行的所有工作，使用较为方便。</li>
+                </ol>
+            </p>
+
+            <!-- 贡献与支持 -->
+            <h2>贡献与支持</h2>
+            <p>
+                如果有意见与建议，欢迎发起 pull request 或发送电邮给我们。
+            </p>
+
+        </article>
+        <hr>
+        <footer>by <b><a href="mailto: wlf@zhishan-iot.tk">Weilun Fong</a></b> from ZHISHAN-IoT</footer>
+    </body>
+</html>

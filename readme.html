@@ -1,0 +1,102 @@
+<!--
+    @Author: Weilun Fong
+    @Coding: utf-8
+    @E-mail: wlf@zhishan-iot.tk
+-->
+
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>readme - dep-subdirs-compile</title>
+        <style>
+            code {
+                font-family: "Consolas";
+                font-weight: bold;
+            }
+
+            html {
+                font-family: "Consolas";
+            }
+
+            h2 {
+                font-variant: small-caps;
+                font-weight: bold;
+                text-align: left;
+            }
+
+            kbd {
+                background-color: DimGray;
+                border-radius: 2px;
+                color: White;
+                font-family: "Consolas";
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <article>
+            <h1 style="text-align: center">README - DEP-SUBDIRS-COMPILE</h1>
+            <p style="text-align: center">
+                <i>Weilun Fong - ZHISHAN-IoT</i><br>
+                <i><time datetime="2019-06-20">2019-06-20</time></i><br>
+            </p>
+
+            <!-- What's dep-subdirs-compile? -->
+            <h2>What's dep-subdirs-compile?</h2>
+            <p>This is a tiny project show how to compile a project which have multi-sub-directory with dependency. In the other words, one or more sub-directory need to be compile firstly bacause other sub-directory required. It's a common suitation in project and dep-subdirs-compile provides a easy and efficient solution. Notice that this project only works on Linux or Unix-like environment.</p>
+            <p>Following projects are using this code of this open source project:
+                <li>
+                    <ol><small>(null)</small></ol>
+                </li>
+                You can tell us if the list is imcomplete, thx!
+            </p>
+
+            <!-- Requirement -->
+            <h2>Requirement</h2>
+            <ul>
+                <li><a href="http://www.gnu.org/software/make/manual/make.html">gnu-make</a></li>
+                <li>a C compiler (need to be configured via environment varibale "CC")</li>
+            </ul>
+
+            <!-- Directory Structure -->
+            <h2>Directory Structure</h2>
+            <p>
+                <ul>
+                    <li><b><sup>*</sup>build</b>&nbsp;: makefile entrace for building project.</li>
+                    <li><b><sup>*</sup>code</b>&nbsp;&nbsp;: project code, inlude all sub-directory. And directory <i>dep</i> needed to be compiled firstly.</li>
+                    <li><b>obj</b>&nbsp;&nbsp;&nbsp;&nbsp;: ouput directory during build.</li>
+                    <li><b>AUTHORS</b></li>
+                    <li><b>ChangLog</b></li>
+                    <li><b>LICENSE</b>: dep-subdirs-compile is licensed under the <a href="https://wtfpl2.com">WTFPL2</a>.</li>
+                    <li><b>readme.html</b>/<b>readme-zh.html</b></li>
+                    <li><b>test.sh</b>: one-key test script with Linux Shell format.</li>
+                    <li><b>VERSION</b>: version code of dep-subdirs-compile</li>
+                </ul>
+                <small><i>note: "*" maker means important directory.</i></small>
+            </p>
+
+            <!-- How it works & How to make? -->
+            <h2>How it works & How to make?</h2>
+            <p>
+                Directory <i>dep</i> is a dependency item and needed to be compiled to a dynamic library file(libdep.so) under <i>obj</i> firstly. There is only a add opertaion function in this dynamic library file. Each of other sub-directory will generate a excutable file(bacause of only one .c files under these directory) and try creating a dynamic link to libdep.so. Besides, every executable files have the same name with corresponding .c file add opertaion function will be called in these excutable files.
+            </p>
+            <p>
+                There are two ways to build this project.
+                <ol>
+                    <li>Execute <a href="build/makefile">makefile</a> under directory <i>build</i>. You can get what paramter the makefile supports via <kbd>&nbsp;make help </kbd>. Besides, you can choose which sub-directory which take part in build via command <kbd>&nbsp;make&nbsp;</kbd> + [name of sub-directory].It's noticed that this way only do build works. If you want to observe running results of target file, you need execute manually.</li>
+                    <li style="">Run <a href="test.sh">test.sh</a>. You can get what paramter the script supports via paramter <kbd>&nbsp;-h </kbd> or <kbd>&nbsp;--help </kbd>. This script can complete build works and run target executable files in one time.</li>
+                </ol>
+            </p>
+
+            <!-- Contribution -->
+            <h2>Contribution</h2>
+            <p>
+                You can pull request it or send e-mail to us if you have any words about this project.
+            </p>
+
+        </article>
+        <hr>
+        <footer>by <b><a href="mailto: wlf@zhishan-iot.tk">Weilun Fong</a></b> from ZHISHAN-IoT</footer>
+    </body>
+</html>

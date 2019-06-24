@@ -1,0 +1,16 @@
+###########################################################################
+# Copyright (c) 2019 ZHISHAN-IoT
+# 
+# file    : makefile.version
+# author  : Weilun Fong
+# brief   : makefile for version information
+# encoding: utf-8
+# note    : show version information
+###########################################################################
+
+VERSION_FILE := $(PATH_ROOT)/VERSION
+
+version:
+	@$(ECHO) "Makefile for dep-subdir-compile v`$(CAT) $(VERSION_FILE)`"
+	@$(ECHO) "Copyright (c) 2019 ZHISHAN-IoT, all rights reserved."
+	@$(ECHO) "Written by Weilun Fong <wlf@zhishan-iot.tk>"

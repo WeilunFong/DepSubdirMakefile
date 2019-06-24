@@ -1,0 +1,32 @@
+###########################################################################
+# Copyright (c) 2019 ZHISHAN-IoT
+# 
+# file    : makefile.help
+# author  : Weilun Fong
+# brief   : makefile for help
+# encoding: utf-8
+# note    : show help information
+###########################################################################
+
+###########################################################
+##### [1] ENVIRONMENT CONFIG
+###########################################################
+### run-time environment
+export SHELL  := /bin/bash
+### shell command
+export ECHO   ?= echo
+
+###########################################################
+##### [2] HELP TARGET
+###########################################################
+help:
+	@$(ECHO) "Build"
+	@$(ECHO) "    all        - Build target"
+	@$(ECHO) "    rebuild    - Rebuild target. And in this case, please pass variable \"JOBS\" via command line instead of -j option to configure job server."
+	@$(ECHO) ""
+	@$(ECHO) "Cleaning"
+	@$(ECHO) "    clean      - Clean all middle files and target files under directory \"obj\""
+	@$(ECHO) ""
+	@$(ECHO) "Info"
+	@$(ECHO) "    help       - show helo information"
+	@$(ECHO) "    version    - show version information"
