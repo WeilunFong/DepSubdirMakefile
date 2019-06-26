@@ -1,6 +1,10 @@
-# ChangeLog of dep-subdir-compile
+# ChangeLog of DirSubdirMakefile
 # E-mail: wlf@zhishan-iot.tk
 
 > version: v0.0.0
-> date   : 
-> note   : first commit!
+> date   : 2019-06-26
+> note   : This is the first version of DirSubdirMakefile! It has following features:
+           + easy-use and provides rich basic functions by entry makefile
+           + high efficiency
+           + high portability because of common directory structure
+           + DirSubdirMakefile is a open-source project and is licensed under WTFPL2(https://wtfpl2.com/)
