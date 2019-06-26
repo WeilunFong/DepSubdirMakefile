@@ -3,7 +3,7 @@
 # 
 # file    : makefile
 # author  : Weilun Fong
-# brief   : makefile for dep-subdir-compile
+# brief   : makefile for DepSubdirMakefile
 # encoding: utf-8
 # note    : show how to compile sub-directories which exist dependency
 ###########################################################################
@@ -12,24 +12,24 @@
 ##### [1] ENVIRONMENT CONFIG
 ###########################################################
 ### run-time environment
-export SHELL      := /bin/bash
+export SHELL       := /bin/bash
 ### shell command
-export BASENAME   := basename
-export CAT        := cat
-export CD         := cd
-export ECHO       := echo
-export EECHO      := echo -e
-export GREP       := grep
-export LS         := ls
+export BASENAME    := basename
+export CAT         := cat
+export CD          := cd
+export ECHO        := echo
+export EECHO       := echo -e
+export GREP        := grep
+export LS          := ls
 ###########################################################
 # cover Linux Shell environment varibale "PWD"
-export PWD        := pwd
+export PWD         := pwd
 ###########################################################
-export RM         := rm -f
-export XARGS      := xargs
+export RM          := rm -f
+export XARGS       := xargs
 ### toolchain
-export CC         ?= gcc
-export MAKE       := gmake
+export CC          ?= gcc
+export MAKE        := gmake
 
 ###########################################################
 ##### [2] PATH DEFINE
@@ -40,11 +40,13 @@ export PATH_ROOT    := $(shell $(CD) $(PATH_BUILD)/.. && $(PWD))
 ### function path
 export PATH_CODE    := $(PATH_ROOT)/code
 export PATH_OBJ     := $(PATH_ROOT)/obj
+### project name
+export PROJECT_NAME := DepSubdirMakefile
 
 ###########################################################
 ##### [3] DIRECTORY LIST DEFINE
-DIR_DEP_LIST := dep
-DIR_NOR_LIST := $(subst inc, , $(subst $(DIR_DEP_LIST), , $(notdir $(wildcard $(PATH_CODE)/*))))
+DIR_DEP_LIST       := dep
+DIR_NOR_LIST       := $(subst inc, , $(subst $(DIR_DEP_LIST), , $(notdir $(wildcard $(PATH_CODE)/*))))
 ###########################################################
 
 ###########################################################

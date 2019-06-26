@@ -8,9 +8,31 @@
 # note    : show version information
 ###########################################################################
 
-VERSION_FILE := $(PATH_ROOT)/VERSION
+###########################################################
+##### [1] ENVIRONMENT CONFIG
+###########################################################
+### run-time environment
+export SHELL     := /bin/bash
+### shell command
+export CAT       ?= cat
+export ECHO      ?= echo
 
+###########################################################
+##### [2] VARIABLE DEFINE
+###########################################################
+### VERSION file
+VERSION_FILE_NAME := VERSION
+VERSION_FILE      := $(PATH_ROOT)/$(VERSION_FILE_NAME)
+ifneq ($(VERSION_FILE_NAME), $(notdir $(wildcard $(VERSION_FILE))))
+    $(error no such file $(VERSION_FILE))
+endif
+### project name
+PROJECT_NAME      ?= DepSubdirMakefile
+
+###########################################################
+##### [3] "version" TARGET
+###########################################################
 version:
-	@$(ECHO) "Makefile for dep-subdir-compile v`$(CAT) $(VERSION_FILE)`"
+	@$(ECHO) "Makefile for $(PROJECT_NAME) v`$(CAT) $(VERSION_FILE)`"
 	@$(ECHO) "Copyright (c) 2019 ZHISHAN-IoT, all rights reserved."
 	@$(ECHO) "Written by Weilun Fong <wlf@zhishan-iot.tk>"
