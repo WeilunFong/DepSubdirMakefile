@@ -8,3 +8,7 @@
            + high efficiency
            + high portability because of common directory structure
            + DirSubdirMakefile is a open-source project and is licensed under WTFPL2(https://wtfpl2.com/)
+
+> version: v0.0.1
+> date   : 
+> note   : (1)support environment variable CFLAGS

@@ -14,7 +14,7 @@ CUR_DIR_TAR  := $(notdir $(CURDIR))
 ###########################################################
 CFILES       := $(wildcard src/*.c)
 EXEFILES     := $(addprefix $(PATH_OBJ)/, $(subst .c, ,$(notdir $(CFILES))))
-CFLAGS       := -I$(PATH_CODE)/inc -pipe -O2 -L$(PATH_OBJ) -ldep
+CFLAGS       += -L$(PATH_OBJ) -ldep
 ###########################################################
 
 ###########################################################

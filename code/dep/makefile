@@ -30,7 +30,7 @@ PATH_OBJ     ?= $(PATH_ROOT)/obj
 CUR_DIR_TAR  := $(notdir $(CURDIR))
 TAGET_LIB    := $(PATH_OBJ)/lib$(CUR_DIR_TAR).so
 ###########################################################
-CFLAGS       := -I$(PATH_CODE)/inc -pipe -O2 -shared -fPIC -o $(TAGET_LIB)
+CFLAGS       += -shared -fPIC -o $(TAGET_LIB)
 ###########################################################
 
 ###########################################################

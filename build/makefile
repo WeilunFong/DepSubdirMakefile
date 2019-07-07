@@ -32,7 +32,7 @@ export CC          ?= gcc
 export MAKE        := gmake
 
 ###########################################################
-##### [2] PATH DEFINE
+##### [2] PATH AND OTHERS
 ###########################################################
 ### basic path
 export PATH_BUILD   := $(CURDIR)
@@ -42,6 +42,8 @@ export PATH_CODE    := $(PATH_ROOT)/code
 export PATH_OBJ     := $(PATH_ROOT)/obj
 ### project name
 export PROJECT_NAME := DepSubdirMakefile
+### CFLAGS
+export CFLAGS       += -I$(PATH_CODE)/inc -pipe -O2
 
 ###########################################################
 ##### [3] DIRECTORY LIST DEFINE
