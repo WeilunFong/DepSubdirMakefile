@@ -11,4 +11,4 @@
 
 > version: v0.0.1
 > date   : 
-> note   : (1)support environment variable CFLAGS
+> note   : (1)support environment variable CFLAGS and add -Wall compiler option
