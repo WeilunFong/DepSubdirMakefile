@@ -43,7 +43,7 @@ export PATH_OBJ     := $(PATH_ROOT)/obj
 ### project name
 export PROJECT_NAME := DepSubdirMakefile
 ### CFLAGS
-export CFLAGS       += -I$(PATH_CODE)/inc -pipe -O2 -Wall
+export CFLAGS       += -I$(PATH_CODE)/inc -pipe -O2 -Wall -L$(PATH_OBJ)
 
 ###########################################################
 ##### [3] DIRECTORY LIST DEFINE

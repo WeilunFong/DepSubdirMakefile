@@ -3,8 +3,8 @@ A solution shows how to compile a project with dependency.
 ## Brief
 DepSubdirMakefile is a tiny project shows how to compile a project which has multi-sub-directory with dependency. In the other words, one or more sub-directory need to be compile firstly bacause other sub-directory required. It's a common suitation in project and DepSubdirMakefile provides a easy and efficient solution. Notice that this DepSubdirMakefile only works on Linux or Unix-like environment.
 ## Requirement
-- gnu-make
-- a C compiler (need to be configured via environment varibale "CC")
+- GNU Make
+- GNU C compiler (it can be configured as other compiler via environment varibale "CC")
 ## Directory Structure
 - *build*: &nbsp;makefile entrace for building project.
 - *code*: &nbsp;project code, inlude all sub-directory. And directory dep needed to be compiled firstly.

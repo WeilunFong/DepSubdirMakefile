@@ -12,3 +12,5 @@
 > version: v0.0.1
 > date   : 
 > note   : (1)support environment variable CFLAGS and add -Wall compiler option
+           (2)create general purpose makefile(process.mk) for compiling executable file and modify Makefile
+           under related sub-directories

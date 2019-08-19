@@ -4,7 +4,7 @@
 # Copyright (c) 2019 ZHISHAN-IoT
 # 
 # file    : test.sh
-# author  : 
+# author  : Weilun Fong
 # brief   : Linux Shell script for test
 # encoding: utf-8
 # note    : 
@@ -14,6 +14,7 @@
 ##### [*] get script name
 SCRIPT_FULL_NAME=$0
 SCRIPT_NAME=`echo $SCRIPT_FULL_NAME | awk -F '/' '{print $NF}'`
+PROJECT_NAME=DepSubdirMakefile
 ###########################################################
 
 ###########################################################
@@ -73,26 +74,27 @@ function app_handle_parameter {
 
 ### show help information function
 function app_show_help_information {
-    echo "[$SCRIPT_NAME] Test script for dep-subdir-compile"
+    echo "[$SCRIPT_NAME] Test script for $PROJECT_NAME"
     echo "Usage:"
-    echo "    $SCRIPT_FULL_NAME [options]"
+    echo "    $SCRIPT_FULL_NAME [OPTION]"
     echo ""
     echo "Function options:"
     echo "    -c, --clean                     clean operation"
     echo "    -p, --parallel=n                the value will pass to \"make -j\""
-    echo "Info opetions:"
+    echo "Info options:"
     echo "    -h, --help                      show help information"
     echo "    -v, --version                   show version information"
     echo ""
     echo "Examples:"
     echo "  exam1: $SCRIPT_FULL_NAME"
     echo "  exam2: $SCRIPT_FULL_NAME --parallel=8"
+    echo "  exam3: $SCRIPT_FULL_NAME -c"
     exit 0
 }
 
 ### show version information function
 function app_show_version_information {
-    echo "[$SCRIPT_NAME] Test script for dep-subdir-compile `cat VERSION`"
+    echo "[$SCRIPT_NAME] Test script for $PROJECT_NAME `cat VERSION`"
     echo "Copyright (C) 2019 ZHISHAN-IoT, all rights reserved."
     echo "a one-key test script."
     echo ""
